@@ -1,0 +1,49 @@
+* jsdoc-font-lock-keywords
+
+Extra Font Lock Keywords For Jsdoc Comments.
+
+** Installation
+
+*** Manual
+
+Download the source code and put it wherever you like, e.g. into =~/.emacs.d/jsdoc-font-lock-keywords/=
+
+#+begin_src shell :eval no
+git clone https://github.com/KarimAziev/jsdoc-font-lock-keywords.git ~/.emacs.d/jsdoc-font-lock-keywords/
+#+end_src
+
+Add the downloaded directory to the load path:
+
+#+begin_src elisp :eval no
+
+(add-to-list 'load-path "~/.emacs.d/jsdoc-font-lock-keywords/")
+
+#+end_src
+
+#+begin_src elisp :eval no
+(use-package jsdoc-font-lock-keywords
+  :straight (jsdoc-font-lock-keywords
+             :repo "KarimAziev/jsdoc-font-lock-keywords"
+             :type git
+             :host github))
+#+end_src
+
+** Usage
+
+#+begin_src emacs-lisp
+
+;; extending js-modes
+(with-eval-after-load "js"
+  (require 'jsdoc-font-lock-keywords)
+  (defvar jsdoc-font-lock-keywords)
+  (dolist (mode '(js-mode js-jsx-mode js-ts-mode))
+    (font-lock-add-keywords mode jsdoc-font-lock-keywords)))
+
+ ;; extending typescript-ts-modes
+(with-eval-after-load "typescript-ts-mode"
+  (require 'jsdoc-font-lock-keywords)
+  (defvar jsdoc-font-lock-keywords)
+  (dolist (mode '(tsx-ts-mode typescript-ts-mode js-ts-mode))
+    (font-lock-add-keywords mode jsdoc-font-lock-keywords)))
+
+#+end_src
