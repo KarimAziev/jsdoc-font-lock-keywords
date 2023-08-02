@@ -185,6 +185,7 @@
              "protected"
              "public"
              "readonly"
+             "remarks"
              "static"
              "summary"
              "supported"
@@ -242,7 +243,7 @@ The optional second argument LIMIT is a buffer position that bounds the search."
                 (save-match-data
                   (save-excursion
                     (goto-char (nth 8 parse))
-                    (looking-at "/\\*\\*")))))
+                    (looking-at "/\\(\\*\\*\\|/\\)")))))
              (setq result (point))
            t)))
     result))
