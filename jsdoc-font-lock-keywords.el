@@ -53,8 +53,8 @@
              "property"
              "typedef"))
           "\\)"
-          "\\s-*\\({[^}]+}\\)?"         ; optional type
-          "\\s-*\\[?\\([[:alnum:]_$\.]+\\)?\\]?"  ; name
+          "\\s-*\\({[^}]+}\\)?"                   ; optional type
+          "\\s-*\\[?\\([[:alnum:]_$\\.]+\\)?\\]?" ; name
           "\\_>")
   "Matches jsdoc tags with optional type and optional param name.")
 
