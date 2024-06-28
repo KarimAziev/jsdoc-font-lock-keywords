@@ -51,7 +51,8 @@
              "param"
              "prop"
              "property"
-             "typedef"))
+             "typedef"
+             "template"))
           "\\)"
           "\\s-*\\({[^}]+}\\)?"                   ; optional type
           "\\s-*\\[?\\([[:alnum:]_$\\.]+\\)?\\]?" ; name
